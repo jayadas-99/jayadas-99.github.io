@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaya Das · Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f8f6;
+  --bg2: #ffffff;
+  --bg3: #eef5f6;
+  --bg4: #dfeaec;
+  --surface: #ffffff;
+  --text: #1e252b;
+  --text2: #4e5a63;
+  --text3: #7b858c;
+  --accent: #3f7881;
+  --accent2: #2d5f68;
+  --accent3: rgba(63,120,129,0.11);
+  --teal: #5f6fa3;
+  --teal2: rgba(95,111,163,0.10);
+  --rose: #a04752;
+  --border: rgba(30,37,43,0.10);
+  --border2: rgba(30,37,43,0.16);
+  --shadow: 0 18px 45px rgba(63,120,129,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 4rem;background:rgba(247,248,246,0.90);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.15rem;color:var(--text);text-decoration:none;letter-spacing:0.01em;}
+.nav-logo span{color:var(--accent);font-style:italic;}
+.nav-links{display:flex;gap:2.3rem;list-style:none;}
+.nav-links a{color:var(--text3);text-decoration:none;font-size:0.76rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{font-size:0.78rem;font-weight:700;color:#fff;background:var(--accent);border:none;padding:0.58rem 1.25rem;border-radius:4px;cursor:pointer;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s,transform 0.2s;font-family:'DM Sans',sans-serif;}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px);}
+
+.hero{min-height:calc(100vh - 74px);padding:5.35rem 4rem 3rem;display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:4rem;align-items:start;border-bottom:1px solid var(--border);position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%,#f7f8f6 100%);}
+.hero-left{max-width:760px;margin-top:4.5rem;}
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:1.5rem;}
+.hero-eyebrow::after{content:'';width:42px;height:1px;background:var(--accent);opacity:0.45;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(3.1rem,5vw,4.8rem);font-weight:400;line-height:1.04;letter-spacing:0;margin-bottom:1.5rem;color:var(--text);}
+.hero h1 .hero-prelude{display:inline-block;font-size:0.72em;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-desc{font-size:1rem;color:var(--text2);line-height:1.82;max-width:590px;font-weight:400;margin-bottom:2.2rem;}
+.hero-desc strong{color:var(--text);font-weight:700;}
+.hero-actions{display:flex;gap:0.85rem;align-items:center;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);padding:0.82rem 1.8rem;border-radius:4px;font-size:0.83rem;font-weight:700;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;letter-spacing:0.02em;transition:background 0.2s,transform 0.2s;}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px);}
+.btn-outline{background:#fff;color:var(--text);border:1px solid var(--border2);padding:0.82rem 1.8rem;border-radius:4px;font-size:0.83rem;font-weight:700;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+
+.hero-right{display:flex;flex-direction:column;gap:0.75rem;align-items:center;width:100%;margin-top:-0.35rem;}
+.photo-frame{width:100%;aspect-ratio:1/1;max-width:220px;margin:0 auto;border-radius:50%;overflow:hidden;background:#eaf2f4;border:7px solid #ffffff;box-shadow:0 18px 45px rgba(63,120,129,0.16);}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 26%;display:block;}
+.profile-card{width:100%;background:rgba(255,255,255,0.94);border:1px solid rgba(63,120,129,0.14);border-radius:8px;padding:1.1rem 1.25rem;box-shadow:0 16px 36px rgba(63,120,129,0.08);}
+.profile-name{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400;margin-bottom:0.2rem;color:var(--text);}
+.profile-role{font-size:0.76rem;color:var(--text3);margin-bottom:0.8rem;line-height:1.45;}
+.profile-divider{height:1px;background:var(--border);margin-bottom:0.8rem;}
+.profile-facts{display:flex;flex-direction:column;gap:0.42rem;}
+.profile-fact{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.76rem;}
+.fact-label{color:var(--text3);width:68px;flex-shrink:0;font-size:0.64rem;text-transform:uppercase;letter-spacing:0.08em;padding-top:0.12rem;font-weight:700;}
+.fact-val{color:var(--text2);line-height:1.5;}
+.stat-row{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem;box-shadow:0 10px 28px rgba(32,42,50,0.05);}
+.stat-num{font-family:'DM Serif Display',serif;font-size:1.62rem;font-weight:400;letter-spacing:0;color:var(--text);display:block;line-height:1;margin-bottom:0.28rem;}
+.stat-num.gold{color:var(--accent);}
+.stat-num.teal{color:var(--teal);}
+.stat-label{font-size:0.64rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;line-height:1.4;font-weight:700;}
+
+section{padding:5.8rem 4rem;border-bottom:1px solid var(--border);background:var(--bg);}
+section:nth-of-type(even){background:#fff;}
+.section-kicker{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:0.95rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;letter-spacing:0;line-height:1.15;color:var(--text);margin-bottom:0.75rem;}
+.section-title em{font-style:italic;color:var(--accent);}
+.section-sub{color:var(--text2);font-size:0.94rem;font-weight:400;line-height:1.8;max-width:640px;margin-bottom:2.7rem;}
+
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
+.about-bio{font-size:0.94rem;color:var(--text2);line-height:1.92;font-weight:400;}
+.about-bio p{margin-bottom:1.1rem;}
+.about-bio p:last-child{margin-bottom:0;}
+.about-bio strong{color:var(--text);font-weight:700;}
+.skills-label,.tl-label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:0.85rem;font-weight:800;}
+.skill-chips{display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:2.25rem;}
+.chip{padding:0.32rem 0.75rem;border:1px solid var(--border2);border-radius:4px;font-size:0.7rem;color:var(--text2);background:#fff;transition:all 0.15s;cursor:default;}
+.chip:hover{background:var(--accent3);color:var(--accent);border-color:rgba(63,120,129,0.35);}
+.chip.featured{background:var(--accent3);color:var(--accent);border-color:rgba(63,120,129,0.30);font-weight:700;}
+.tl-item{display:flex;gap:1rem;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border);}
+.tl-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tl-year{font-size:0.65rem;color:var(--text3);width:68px;flex-shrink:0;padding-top:0.15rem;font-weight:700;}
+.tl-badge{display:inline-block;margin-bottom:0.3rem;font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);background:var(--teal2);padding:0.12rem 0.45rem;border-radius:4px;font-weight:800;}
+.tl-content h4{font-size:0.86rem;font-weight:700;margin-bottom:0.18rem;color:var(--text);}
+.tl-content p{font-size:0.76rem;color:var(--text2);line-height:1.6;}
+
+.projects-layout{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.project-row{background:#fff;display:grid;grid-template-columns:52px 1fr 250px;gap:2rem;align-items:start;padding:2.4rem;transition:background 0.2s;cursor:pointer;}
+.project-row:hover{background:#f9fbfb;}
+.project-num{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;color:#c8d1d4;letter-spacing:0;line-height:1;}
+.project-tags{display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;}
+.project-tag{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:800;}
+.project-tag::after{content:'·';margin-left:0.5rem;color:var(--text3);}
+.project-tag:last-child::after{display:none;}
+.project-row h3{font-family:'DM Serif Display',serif;font-size:1.45rem;font-weight:400;letter-spacing:0;margin-bottom:0.55rem;line-height:1.2;color:var(--text);}
+.project-row p{font-size:0.82rem;color:var(--text2);line-height:1.78;font-weight:400;}
+.metric-item{margin-bottom:0.8rem;}
+.metric-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text3);margin-bottom:0.18rem;font-weight:800;}
+.metric-val{font-size:0.8rem;color:var(--text2);}
+.metric-bar{height:3px;background:var(--bg4);border-radius:3px;margin-top:0.35rem;overflow:hidden;}
+.metric-fill{height:100%;border-radius:3px;transition:width 1.2s ease;}
+.project-cta,.teardown-read{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;color:var(--accent);border-bottom:1px solid transparent;padding-bottom:1px;text-decoration:none;transition:border-color 0.2s;margin-top:0.85rem;font-weight:700;}
+.project-cta:hover,.teardown-read:hover{border-color:var(--accent);}
+
+.case-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.insight-block{border-left:2px solid var(--accent);padding-left:1.2rem;margin-bottom:1.4rem;}
+.insight-block h4{font-size:0.88rem;font-weight:800;margin-bottom:0.35rem;color:var(--text);}
+.insight-block p{font-size:0.8rem;color:var(--text2);line-height:1.72;margin:0;}
+.decision-block{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.35rem;margin-bottom:1rem;box-shadow:0 10px 26px rgba(32,42,50,0.04);}
+.decision-label{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:0.45rem;font-weight:800;}
+.decision-block h4{font-size:0.9rem;font-weight:800;margin-bottom:0.35rem;color:var(--text);}
+.decision-block p{font-size:0.79rem;color:var(--text2);line-height:1.7;margin:0;}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem;margin-bottom:2rem;}
+.kpi-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;box-shadow:0 10px 26px rgba(32,42,50,0.04);}
+.kpi-num{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--accent);display:block;line-height:1;margin-bottom:0.28rem;}
+.kpi-label{font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;line-height:1.4;font-weight:800;}
+
+.paisa-mockup{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);}
+.mockup-topbar{background:var(--bg3);color:var(--text2);padding:0.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;font-size:0.7rem;}
+.mockup-dots{display:flex;gap:5px;}
+.mockup-dot{width:8px;height:8px;border-radius:50%;background:rgba(30,37,43,0.18);}
+.mockup-body{padding:1.2rem;}
+.mkp-greeting{font-size:0.65rem;color:var(--text3);margin-bottom:0.18rem;}
+.mkp-cycle{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;font-weight:700;background:var(--accent3);color:var(--accent);padding:0.2rem 0.55rem;border-radius:4px;margin-top:0.35rem;margin-bottom:0.9rem;}
+.mkp-cat-card{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.8rem;margin-bottom:0.55rem;}
+.mkp-cat-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem;}
+.mkp-cat-name{font-size:0.75rem;font-weight:800;color:var(--text);}
+.mkp-cat-amount{font-family:'DM Serif Display',serif;font-size:0.92rem;font-weight:400;}
+.mkp-cat-amount.r{color:var(--rose);}
+.mkp-cat-amount.g{color:var(--accent);}
+.mkp-bar-track{width:100%;height:3px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:0.3rem;}
+.mkp-bar-fill{height:100%;border-radius:3px;}
+.mkp-cat-nudge{font-size:0.62rem;color:var(--text3);font-style:italic;}
+.mkp-nudge{background:var(--teal2);border:1px solid rgba(122,91,47,0.18);border-radius:6px;padding:0.7rem;font-size:0.7rem;color:var(--teal);line-height:1.6;margin-top:0.9rem;}
+
+.project-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:2.5rem;width:fit-content;background:#fff;}
+.project-tab{background:transparent;border:none;padding:0.7rem 1.8rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:800;color:var(--text3);cursor:pointer;letter-spacing:0.03em;transition:all 0.18s;border-right:1px solid var(--border);}
+.project-tab:last-child{border-right:none;}
+.project-tab:hover{background:var(--bg3);color:var(--text);}
+.project-tab.active{background:var(--accent);color:#fff;}
+.project-panel{display:none;}
+.project-panel.active{display:block;}
+.artifact-tabs{display:flex;gap:0.4rem;margin-bottom:2rem;flex-wrap:wrap;}
+.artifact-tab{background:#fff;border:1px solid var(--border);border-radius:4px;padding:0.52rem 1.1rem;font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text3);cursor:pointer;letter-spacing:0.02em;transition:all 0.18s;}
+.artifact-tab:hover{border-color:var(--accent);color:var(--accent);}
+.artifact-tab.active{background:var(--accent3);border-color:rgba(63,120,129,0.35);color:var(--accent);}
+.artifact-panel{display:none;}
+.artifact-panel.active{display:block;}
+.artifact-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
+.artifact-type{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);font-weight:800;}
+.artifact-project{font-size:0.75rem;color:var(--text3);}
+.artifact-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.artifact-block{margin-bottom:1.2rem;}
+.artifact-block h4{font-size:0.88rem;font-weight:800;margin-bottom:0.35rem;color:var(--text);}
+.artifact-block p{font-size:0.79rem;color:var(--text2);line-height:1.75;}
+.artifact-table-label{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:0.7rem;font-weight:800;}
+.artifact-table,.decision-log{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;}
+.artifact-table-row{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:0.55rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.75rem;align-items:center;color:var(--text2);}
+.artifact-table-row:last-child{border-bottom:none;}
+.artifact-table-row.header{background:var(--bg3);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);font-weight:800;}
+.p0{color:var(--rose);font-weight:800;font-size:0.7rem;}
+.p1{color:var(--accent);font-weight:800;font-size:0.7rem;}
+.p2{color:var(--text3);font-weight:700;font-size:0.7rem;}
+.dl-row{display:grid;grid-template-columns:32px 1fr 1.2fr 1.2fr 2fr;gap:1rem;padding:0.78rem 1rem;border-bottom:1px solid var(--border);font-size:0.75rem;align-items:start;color:var(--text2);}
+.dl-row:last-child{border-bottom:none;}
+.dl-row.header{background:var(--bg3);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);align-items:center;font-weight:800;}
+.dl-num{color:var(--text3);font-weight:800;}
+.dl-decision{font-weight:800;color:var(--text);}
+.dl-chose{color:var(--accent);font-weight:800;}
+.dl-rejected{color:var(--rose);text-decoration:line-through;opacity:0.8;}
+.dl-why{color:var(--text2);line-height:1.6;}
+
+.teardown-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.teardown-card{background:#fff;padding:1.8rem;transition:background 0.2s;cursor:pointer;}
+.teardown-card:hover{background:#f9fbfb;}
+.teardown-app{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.1rem;}
+.app-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;border:1px solid var(--border);font-weight:800;}
+.app-name{font-size:0.88rem;font-weight:800;color:var(--text);}
+.app-cat{font-size:0.68rem;color:var(--text3);}
+.teardown-card p{font-size:0.79rem;color:var(--text2);line-height:1.75;font-weight:400;margin-bottom:0.9rem;}
+.teardown-tag{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);font-weight:800;}
+.teardown-headline{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:400;margin-bottom:0.55rem;line-height:1.3;color:var(--text);}
+.teardown-finding{display:flex;gap:0.55rem;margin-bottom:0.45rem;font-size:0.73rem;color:var(--text2);}
+.teardown-finding-num{color:var(--accent);font-weight:800;flex-shrink:0;}
+
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.contact-left h2{font-family:'DM Serif Display',serif;font-size:2.3rem;font-weight:400;letter-spacing:0;line-height:1.15;margin-bottom:1.1rem;color:var(--text);}
+.contact-left h2 em{font-style:italic;color:var(--accent);}
+.contact-left p{font-size:0.9rem;color:var(--text2);line-height:1.85;font-weight:400;margin-bottom:1.75rem;}
+.contact-links{display:flex;flex-direction:column;gap:0.65rem;}
+.contact-link{display:flex;align-items:center;gap:0.8rem;padding:0.9rem 1.1rem;background:#fff;border:1px solid var(--border);border-radius:6px;color:var(--text2);text-decoration:none;font-size:0.8rem;transition:all 0.2s;}
+.contact-link:hover{background:var(--accent);color:#fff;border-color:var(--accent);transform:translateY(-1px);}
+.contact-link svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;}
+.contact-link .link-label{flex:1;}
+.contact-link .link-arrow{color:var(--text3);font-size:0.75rem;}
+.contact-link:hover .link-arrow{color:#fff;}
+.availability{margin-top:1.75rem;padding:1.1rem;border:1px solid rgba(63,120,129,0.18);background:var(--accent3);border-radius:6px;}
+.avail-dot{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;color:var(--accent);font-weight:800;letter-spacing:0.05em;margin-bottom:0.45rem;}
+.avail-dot::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.35}}
+.availability p{font-size:0.75rem;color:var(--text2);line-height:1.6;font-weight:400;}
+.contact-form-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:2rem;box-shadow:var(--shadow);}
+.contact-form-card h4{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;margin-bottom:0.65rem;color:var(--text);}
+.contact-form-card p{font-size:0.78rem;color:var(--text2);line-height:1.7;font-weight:400;}
+.form-fields{display:flex;flex-direction:column;gap:0.7rem;margin-top:1.1rem;}
+.form-field{display:flex;flex-direction:column;gap:0.3rem;}
+.form-field label{font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text3);font-weight:800;}
+.form-field input,.form-field textarea{background:var(--bg);border:1px solid var(--border2);border-radius:4px;padding:0.65rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;color:var(--text);outline:none;transition:border-color 0.2s;resize:none;}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--accent);background:#fff;}
+.form-submit{background:var(--accent);color:#fff;border:none;padding:0.82rem;border-radius:4px;font-size:0.8rem;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;width:100%;}
+.form-submit:hover{background:var(--accent2);}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal.visible{opacity:1;transform:none;}
+footer{display:flex;align-items:center;justify-content:space-between;padding:2rem 4rem;border-top:1px solid var(--border);background:#fff;}
+footer p{font-size:0.72rem;color:var(--text3);}
+
+@media(max-width:900px){
+  nav{padding:0.9rem 1.25rem;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:5.7rem 1.25rem 3rem;gap:2rem;}
+  .hero-left{margin-top:0;}
+  .hero-right{max-width:420px;margin:0 auto;}
+  .hero h1{font-size:clamp(2.7rem,14vw,4rem);}
+  section{padding:4rem 1.25rem;}
+  .about-layout{grid-template-columns:1fr;gap:3rem;}
+  .case-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .artifact-layout{grid-template-columns:1fr;gap:2rem;}
+  .dl-row{grid-template-columns:1fr;gap:0.3rem;}
+  .dl-row.header{display:none;}
+  .dl-rejected,.dl-num{display:none;}
+  .teardown-row{grid-template-columns:1fr;}
+  .kpi-row{grid-template-columns:1fr 1fr;}
+  .contact-layout{grid-template-columns:1fr;gap:3rem;}
+  .project-row{grid-template-columns:1fr;padding:1.5rem;}
+  .project-num{display:none;}
+  .project-tabs{width:100%;}
+  .project-tab{flex:1;padding:0.7rem 1rem;}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}
+}
+@media(max-width:560px){
+  .hero-actions{align-items:stretch;}
+  .btn-primary,.btn-outline{width:100%;text-align:center;}
+  .kpi-row,.stat-row{grid-template-columns:1fr;}
+  .photo-frame{max-width:210px;}
+  .artifact-meta{align-items:flex-start;flex-direction:column;gap:0.35rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Jaya <span>Das</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#pm-artifacts">PM Thinking</a></li>
+    <li><a href="#teardowns">Teardowns</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Product Manager · Bangalore · Gurugram</div>
+    <h1><span class="hero-prelude">I turn user behaviour into</span><br><em>product decisions.</em></h1>
+    <p class="hero-desc">
+      I'm <strong>Jaya Das</strong> — a Digital Product Specialist with 5+ years of experience shaping digital experiences at <strong>Bristol Myers Squibb</strong> and <strong>Qualcomm</strong>. I've worked at the intersection of engineering, customer needs, and business strategy, influencing how digital products are built. Over the years, my role has evolved closer to Product Management and I’m looking to build further in that direction.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">See my work</a>
+      <a href="#contact" class="btn-outline">Let's talk</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-frame">
+      <img src="jaya-das-profile.jpg" alt="Portrait of Jaya Das">
+    </div>
+    <div class="profile-card">
+      <div class="profile-name">Jaya Das</div>
+      <div class="profile-role">Software Engineer II · Digital Products<br>Bristol Myers Squibb · Acting PM</div>
+      <div class="profile-divider"></div>
+      <div class="profile-facts">
+        <div class="profile-fact"><span class="fact-label">Currently</span><span class="fact-val">Bristol Myers Squibb</span></div>
+        <div class="profile-fact"><span class="fact-label">Prior</span><span class="fact-val">Qualcomm (acq. Alphawave)</span></div>
+        <div class="profile-fact"><span class="fact-label">MBA</span><span class="fact-val">BITS Pilani · Business Analytics · 2025</span></div>
+        <div class="profile-fact"><span class="fact-label">BSc</span><span class="fact-val">Parvatibai Chowgule College, Goa · 2020</span></div>
+        <div class="profile-fact"><span class="fact-label">Open to</span><span class="fact-val">PM roles · Fintech · Consumer · Health</span></div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="stat-num gold">5+</span>
+        <span class="stat-label">Years shipping digital products</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num teal">MBA</span>
+        <span class="stat-label">BITS Pilani · Business Analytics</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-kicker reveal">About</div>
+  <div class="about-layout">
+    <div>
+      <h2 class="section-title reveal">I instrument what users <em>actually do</em> — not what we think they do.</h2>
+      <div class="about-bio reveal">
+        <p>Five years working across product, engineering, and analytics — helping digital products improve through data, experimentation, and user behaviour. I’m most interested in the moments where product signals reveal something unexpected: a drop-off, an abandoned flow, or a feature used differently than intended.</p>
+<p>What drives me is turning those insights into better product decisions by combining technical understanding, data, and curiosity about user behaviour. My <strong>MBA in Business Analytics from BITS Pilani</strong> strengthened how I connect product metrics to business outcomes.</p>
+<p>Lately, I’ve been focused on consumer products — healthcare, payments, and everyday tools — and what makes people trust, adopt, or abandon them.</p>
+        </div>
+    </div>
+    <div>
+      <div class="skills-label reveal">Core skills</div>
+      <div class="skill-chips reveal">
+        <span class="chip featured">Product Management</span>
+        <span class="chip featured">Product Strategy</span>
+        <span class="chip featured">0→1 Builds</span>
+        <span class="chip featured">Adobe Analytics</span>
+        <span class="chip">PRD Writing</span>
+        <span class="chip">User Research</span>
+        <span class="chip">Roadmapping</span>
+        <span class="chip">KPI Definition</span>
+        <span class="chip">Stakeholder Mgmt</span>
+        <span class="chip">SQL</span>
+        <span class="chip">A/B Testing</span>
+        <span class="chip">GEO / AIO</span>
+        <span class="chip">React / Vite</span>
+        <span class="chip">Firebase</span>
+        <span class="chip">AI Product</span>
+      </div>
+      <div class="tl-label reveal">Timeline</div>
+      <div class="tl-item reveal">
+        <div class="tl-year">2022–now</div>
+        <div class="tl-content">
+          <span class="tl-badge">Full-time</span>
+          <h4>Software Engineer II · Digital Products</h4>
+          <p>Bristol Myers Squibb — instrumenting and analysing digital product behaviour. Currently acting PM for Odyssey, an internal AI visibility platform.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">2020–22</div>
+        <div class="tl-content">
+          <span class="tl-badge">Full-time</span>
+          <h4>Executive Engineer · Qualcomm (acq. Alphawave)</h4>
+          <p>Worked at Alphawave before its acquisition. Built and shipped digital product features at enterprise scale.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">2023–25</div>
+        <div class="tl-content">
+          <span class="tl-badge" style="color:var(--accent);background:var(--accent3);">MBA</span>
+          <h4>Business Analytics · BITS Pilani</h4>
+          <p>Work-integrated. Connected instrumentation data to strategy and business decisions.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-year">2017–20</div>
+        <div class="tl-content">
+          <span class="tl-badge" style="color:var(--accent);background:var(--accent3);">BSc</span>
+          <h4>Computer Science · Parvatibai Chowgule College, Goa</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-kicker reveal">Work</div>
+  <h2 class="section-title reveal">Things I've built and shipped.</h2>
+  <p class="section-sub reveal">From side projects to production — here's where thinking becomes practice.</p>
+  <div class="projects-layout">
+
+    <!-- PROJECT 01 — ODYSSEY -->
+    <div class="project-row reveal" onclick="document.getElementById('odyssey-deep').scrollIntoView({behavior:'smooth'})">
+      <div class="project-num">01</div>
+      <div class="project-main">
+        <div class="project-tags">
+          <span class="project-tag">AI / GEO</span>
+          <span class="project-tag">0→1 Product</span>
+          <span class="project-tag">Internal Platform</span>
+          <span class="project-tag">MVP</span>
+        </div>
+        <h3>Odyssey — GEO & AI Visibility Platform</h3>
+        <p>As AI tools replace traditional search, brands need to appear in ChatGPT, Gemini, Perplexity, and Google AI Overviews — not just Google rankings. Odyssey is an internal platform I took from ideation to MVP as the sole PM: it queries all four AI engines with brand-relevant prompts, analyses responses across KPIs including share of voice, prompt coverage, AI visibility score, and brand citation sentiment, then generates actionable recommendations — content rewrites, structured data fixes, meta optimisations. Built for 400+ brand websites, replacing fragmented expensive third-party tooling with a single platform we own and control.</p>
+        <a href="#pm-artifacts" class="project-cta">Read the case study →</a>
+      </div>
+      <div class="project-aside">
+        <div class="metric-item">
+          <div class="metric-label">Websites in scope</div>
+          <div class="metric-val">400+</div>
+          <div class="metric-bar"><div class="metric-fill" style="width:90%;background:var(--accent)"></div></div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">AI engines monitored</div>
+          <div class="metric-val">4 (ChatGPT, Gemini, Perplexity, AI Overviews)</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Build vs Buy</div>
+          <div class="metric-val">Chose build — avoided per-site licensing at scale</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">My Role</div>
+          <div class="metric-val">Solo PM · PRD · Roadmap · Team · KPIs · Stakeholders</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 02 — PAISA PULSE -->
+    <div class="project-row reveal" onclick="document.getElementById('pulse-deep').scrollIntoView({behavior:'smooth'})">
+      <div class="project-num">02</div>
+      <div class="project-main">
+        <div class="project-tags">
+          <span class="project-tag">Consumer Fintech</span>
+          <span class="project-tag">0→1 Product</span>
+          <span class="project-tag">AI-Powered</span>
+          <span class="project-tag">Live</span>
+        </div>
+        <h3>Paisa Pulse — Habit Coach for 3 Spending Categories</h3>
+        <p>Most finance apps show users everything and change nothing. Paisa Pulse focuses on the only three spending categories where a salaried Indian can realistically change behaviour within a month — food delivery, quick commerce, and subscriptions. It parses real bank statements locally in the browser (HDFC, Bank of Baroda PDFs + any bank CSV), uses Groq AI for categorisation and nudges, and adapts what it shows based on where the user is in their salary cycle. Every feature decision came from a deliberate tradeoff, not feature accumulation.</p>
+        <a href="#pulse-deep" class="project-cta">Read the case study →</a>
+      </div>
+      <div class="project-aside">
+        <div class="metric-item">
+          <div class="metric-label">Focus categories</div>
+          <div class="metric-val">3 — Food Delivery, Quick Commerce, Subscriptions</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Privacy model</div>
+          <div class="metric-val">PDF parsed locally — file never leaves the browser</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Key differentiator</div>
+          <div class="metric-val">Salary-cycle-aware UX — 4 phases, different UI each</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Stack</div>
+          <div class="metric-val">React · Firebase · Groq / LLaMA · PDF.js</div>
+          <div class="metric-bar"><div class="metric-fill" style="width:75%;background:var(--teal)"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ODYSSEY CASE STUDY -->
+<section id="odyssey-deep">
+  <div class="section-kicker reveal">Current Work · Bristol Myers Squibb</div>
+  <h2 class="section-title reveal">Odyssey — from problem to MVP.</h2>
+  <p class="section-sub reveal">A product I identified, scoped, and am actively building as PM — from the gap nobody was measuring to a working internal platform.</p>
+
+  <div class="kpi-row reveal">
+    <div class="kpi-card"><span class="kpi-num">400+</span><span class="kpi-label">Brand websites in scope</span></div>
+    <div class="kpi-card"><span class="kpi-num">4</span><span class="kpi-label">AI engines queried</span></div>
+    <div class="kpi-card"><span class="kpi-num">7</span><span class="kpi-label">Core KPIs tracked</span></div>
+  </div>
+
+  <div class="case-layout">
+    <div class="reveal">
+      <div class="insight-block">
+        <h4>The Trigger — A measurement gap nobody had named</h4>
+        <p>Brand teams were manually checking whether their products appeared in AI-generated answers. It was anecdotal, inconsistent, and unscalable. No one had a number. Nobody knew if a competitor was being referenced more. The problem existed but wasn't instrumented — which is exactly the kind of gap I've spent my career finding.</p>
+      </div>
+      <div class="insight-block">
+        <h4>The Build vs Buy Decision</h4>
+        <p>Three external vendors were evaluated. All offered solid monitoring but charged per-site licensing — at 400+ websites, the cost was prohibitive. More importantly, they couldn't be shaped around our brand taxonomy or internal workflows. I made the call to build an internal MVP in 8 weeks, pilot with 10 brands, then scale.</p>
+      </div>
+      <div class="insight-block">
+        <h4>What I Owned</h4>
+        <p>PRD, milestone planning, roadmap, KPI framework, stakeholder interviews with brand team leads, engineering team management, and MVP definition. This was the full PM loop on a product that didn't exist six months ago — initiated, owned, and shipped by me while holding a Software Engineer title.</p>
+      </div>
+      <div class="insight-block">
+        <h4>What's Next</h4>
+        <p>Scaling from pilot brands to full 400+ website coverage, adding prompt library customisation per brand category, and building a trend layer that tracks visibility changes over time as AI models update their training data.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="decision-block">
+        <div class="decision-label">KPI Framework</div>
+        <h4>7 metrics that define AI visibility</h4>
+        <p style="margin-bottom:0.65rem;font-size:0.78rem;color:var(--text2);line-height:1.7;">Before building the dashboard, I defined what we were actually trying to measure — because GEO has no industry standard yet.</p>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;justify-content:space-between;font-size:0.73rem;padding:0.38rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:500;color:var(--text);">AI Visibility Score</span><span style="color:var(--text3);">Composite index</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.73rem;padding:0.38rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:500;color:var(--text);">Share of Voice</span><span style="color:var(--text3);">Brand vs competitor mentions</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.73rem;padding:0.38rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:500;color:var(--text);">Prompt Coverage</span><span style="color:var(--text3);">% of queries with brand presence</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.73rem;padding:0.38rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:500;color:var(--text);">Primary Mention Rate</span><span style="color:var(--text3);">Brand cited first vs later</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.73rem;padding:0.38rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:500;color:var(--text);">Citation Sentiment</span><span style="color:var(--text3);">Positive / neutral / negative</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.73rem;padding:0.38rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:500;color:var(--text);">Query-Level Intelligence</span><span style="color:var(--text3);">Which prompts drive visibility</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.73rem;padding:0.38rem 0;"><span style="font-weight:500;color:var(--text);">Domain Authority Signal</span><span style="color:var(--text3);">Technical credibility proxy</span></div>
+        </div>
+      </div>
+      <div class="decision-block" style="margin-top:1rem;">
+        <div class="decision-label">The PM Insight</div>
+        <p style="font-size:0.82rem;color:var(--text2);line-height:1.75;font-style:italic;">"GEO is where SEO was in 2011. Nobody has standardised it yet. The brands that instrument this now will have a data advantage that compounds."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAISA PULSE CASE STUDY -->
+<section id="pulse-deep">
+  <div class="section-kicker reveal">Case Study</div>
+  <h2 class="section-title reveal">Paisa Pulse — the thinking behind it.</h2>
+  <p class="section-sub reveal">Why I removed 70% of the features, focused on 3 categories, and what that taught me about product decisions.</p>
+
+  <div class="case-layout">
+    <div class="reveal">
+      <div class="insight-block">
+        <h4>Insight #1 · Indians think in salary cycles, not calendar months</h4>
+        <p>Every Indian finance app shows a January 1–31 view. But nobody gets paid on January 1st. Salaried Indians think from the 1st to the 27th — or the 5th to the 4th. I built the entire UX around 4 phases of that cycle: Flush, Steady, Careful, Survival.</p>
+      </div>
+      <div class="insight-block">
+        <h4>Insight #2 · Most spending categories are outside your control</h4>
+        <p>Rent is fixed. EMIs are contractual. The only categories where habit actually changes the number are food delivery, quick commerce, and subscriptions. I removed everything else from the main view — deliberately.</p>
+      </div>
+      <div class="insight-block">
+        <h4>Insight #3 · The upload step was the real blocker</h4>
+        <p>The entire app is useless until the user successfully uploads a bank statement. I identified this as the activation problem — not a feature problem. The solution wasn't more features. It was fixing the empty state, adding demo data, and making the upload less fragile.</p>
+      </div>
+      <div class="insight-block">
+        <h4>The Privacy Decision</h4>
+        <p>PDF parsing happens locally in the browser via PDF.js. Only anonymised transaction text, with account numbers stripped, is ever sent to the AI. The file itself never leaves the device.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="paisa-mockup">
+        <div class="mockup-topbar">
+          <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+          <span>Paisa Pulse</span>
+          <span style="opacity:0.4">💓</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mkp-greeting">Good evening, Jaya</div>
+          <div class="mkp-cycle">📅 Careful phase · 8 days to salary</div>
+          <div class="mkp-cat-card">
+            <div class="mkp-cat-header"><span class="mkp-cat-name">🍔 Food Delivery</span><span class="mkp-cat-amount r">₹3,240</span></div>
+            <div class="mkp-bar-track"><div class="mkp-bar-fill" style="width:81%;background:var(--rose);"></div></div>
+            <div class="mkp-cat-nudge">₹3,240 of ₹4,000 budget · 4 more orders than last month</div>
+          </div>
+          <div class="mkp-cat-card">
+            <div class="mkp-cat-header"><span class="mkp-cat-name">🛒 Quick Commerce</span><span class="mkp-cat-amount r">₹1,890</span></div>
+            <div class="mkp-bar-track"><div class="mkp-bar-fill" style="width:63%;background:var(--accent);"></div></div>
+            <div class="mkp-cat-nudge">₹1,890 of ₹3,000 budget · ↓ vs last month</div>
+          </div>
+          <div class="mkp-cat-card">
+            <div class="mkp-cat-header"><span class="mkp-cat-name">📱 Subscriptions</span><span class="mkp-cat-amount g">₹1,147</span></div>
+            <div class="mkp-bar-track"><div class="mkp-bar-fill" style="width:38%;background:var(--teal);"></div></div>
+            <div class="mkp-cat-nudge">3 active subscriptions detected · Audit →</div>
+          </div>
+          <div class="mkp-nudge">💡 You're 8 days from salary. Your food delivery spend is already 81% of budget — consider cooking the last few days.</div>
+        </div>
+      </div>
+      <div class="decision-block" style="margin-top:1.1rem;">
+        <div class="decision-label">Features Removed & Why</div>
+        <div style="font-size:0.76rem;color:var(--text2);line-height:1.85;">
+          <div style="display:flex;gap:0.5rem;margin-bottom:0.35rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Goals page</strong> — savings number unreliable with 3-category view</span></div>
+          <div style="display:flex;gap:0.5rem;margin-bottom:0.35rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Badges</strong> — gamification without depth signals shallow thinking</span></div>
+          <div style="display:flex;gap:0.5rem;margin-bottom:0.35rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Share Card</strong> — no user data to justify</span></div>
+          <div style="display:flex;gap:0.5rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Help Page</strong> — if you need a help page, fix the UX</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I THINK / PM ARTIFACTS — TABBED BY PROJECT -->
+<section id="pm-artifacts">
+  <div class="section-kicker reveal">PM Thinking</div>
+  <h2 class="section-title reveal">Not just how I built — <em>how I think.</em></h2>
+  <p class="section-sub reveal">The PRD, decision log, metrics framework, and honest retrospective behind the work.</p>
+
+  <!-- PROJECT-LEVEL TABS -->
+  <div class="project-tabs reveal">
+    <button class="project-tab active" onclick="showProject('odyssey', this)">Odyssey</button>
+    <button class="project-tab" onclick="showProject('paisa', this)">Paisa Pulse</button>
+  </div>
+
+  <!-- ODYSSEY PANEL -->
+  <div class="project-panel active" id="project-odyssey">
+    <div class="artifact-tabs">
+      <button class="artifact-tab active" onclick="showArtifact('ody-prd', this, 'odyssey')">PRD</button>
+      <button class="artifact-tab" onclick="showArtifact('ody-decisions', this, 'odyssey')">Decision Log</button>
+      <button class="artifact-tab" onclick="showArtifact('ody-metrics', this, 'odyssey')">Metrics Framework</button>
+      <button class="artifact-tab" onclick="showArtifact('ody-retro', this, 'odyssey')">What I'd Do Differently</button>
+    </div>
+
+    <!-- PRD -->
+    <div class="artifact-panel active" id="artifact-ody-prd">
+      <div class="artifact-meta">
+        <span class="artifact-type">PRD</span>
+        <span class="artifact-project">Odyssey · Bristol Myers Squibb · May 2026</span>
+      </div>
+      <div class="artifact-layout">
+        <div>
+          <div class="artifact-block">
+            <h4>Problem Statement</h4>
+            <p>Brand teams had no reliable way to know whether their brands appeared in AI-generated answers. As users increasingly use ChatGPT, Gemini, Perplexity, and Google AI Overviews instead of traditional search, visibility strategies built entirely around Google SEO became insufficient. The problem wasn't being measured — which meant it wasn't being managed.</p>
+          </div>
+          <div class="artifact-block">
+            <h4>User Persona — "Neha", Brand Manager</h4>
+            <p>Responsible for 3–8 brand websites. Current workflow: manually types brand queries into ChatGPT, screenshots results, shares in a deck. Pain: no consistency, no trend data, no competitive context, no actionable output. Goal: know where the brand stands in AI answers and what to do about it.</p>
+          </div>
+          <div class="artifact-block">
+            <h4>North Star Metric</h4>
+            <p><strong>Recommendation Adoption Rate</strong> — the % of Odyssey-generated recommendations implemented by brand teams. A high adoption rate means output is trusted and specific enough to act on. A dashboard nobody acts on is a vanity product.</p>
+          </div>
+          <div class="artifact-block">
+            <h4>What I Cut from MVP & Why</h4>
+            <p>Automated content rewriting was requested early. I pushed it to P2 — brand teams need to trust the <em>diagnosis</em> before they trust the <em>prescription</em>. Shipping recommendations they understand builds trust. Shipping AI-written content they didn't ask for breaks it.</p>
+          </div>
+        </div>
+        <div>
+          <div class="artifact-table-label">Feature Prioritisation</div>
+          <div class="artifact-table">
+            <div class="artifact-table-row header"><span>Feature</span><span>Priority</span></div>
+            <div class="artifact-table-row"><span>Multi-AI query engine (4 engines)</span><span class="p0">P0</span></div>
+            <div class="artifact-table-row"><span>Share of Voice analysis</span><span class="p0">P0</span></div>
+            <div class="artifact-table-row"><span>Prompt Coverage tracking</span><span class="p0">P0</span></div>
+            <div class="artifact-table-row"><span>Recommendation engine</span><span class="p0">P0</span></div>
+            <div class="artifact-table-row"><span>AI Visibility Score (composite)</span><span class="p1">P1</span></div>
+            <div class="artifact-table-row"><span>Citation Sentiment analysis</span><span class="p1">P1</span></div>
+            <div class="artifact-table-row"><span>Query-Level Intelligence</span><span class="p1">P1</span></div>
+            <div class="artifact-table-row"><span>Competitor Share of Voice</span><span class="p1">P1</span></div>
+            <div class="artifact-table-row"><span>Prompt library customisation</span><span class="p2">P2</span></div>
+            <div class="artifact-table-row"><span>Trend layer (visibility over time)</span><span class="p2">P2</span></div>
+            <div class="artifact-table-row"><span>Auto content rewrite generation</span><span class="p2">P2</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DECISION LOG -->
+    <div class="artifact-panel" id="artifact-ody-decisions">
+      <div class="artifact-meta">
+        <span class="artifact-type">Decision Log</span>
+        <span class="artifact-project">Odyssey · 5 key decisions</span>
+      </div>
+      <div class="decision-log">
+        <div class="dl-row header"><span class="dl-num">#</span><span class="dl-decision">Decision</span><span class="dl-chose">Chose</span><span class="dl-rejected">Rejected</span><span class="dl-why">Why</span></div>
+        <div class="dl-row"><span class="dl-num">1</span><span class="dl-decision">Build vs Buy</span><span class="dl-chose">Build internally</span><span class="dl-rejected">3rd-party vendors</span><span class="dl-why">Per-site licensing was prohibitive at 400+ sites. Vendors couldn't adapt to our brand taxonomy or integrate with internal workflows.</span></div>
+        <div class="dl-row"><span class="dl-num">2</span><span class="dl-decision">MVP scope</span><span class="dl-chose">4 engines + SoV + Recommendations only</span><span class="dl-rejected">Trend layer, auto rewrites, competitor deep-dive</span><span class="dl-why">Adoption requires trust. Trust requires doing one thing well. Too much in MVP dilutes the signal on what brand teams actually value.</span></div>
+        <div class="dl-row"><span class="dl-num">3</span><span class="dl-decision">North Star Metric</span><span class="dl-chose">Recommendation Adoption Rate</span><span class="dl-rejected">AI Visibility Score as North Star</span><span class="dl-why">High visibility score with zero action taken is a vanity metric. Adoption measures whether the tool changes behaviour — the actual goal.</span></div>
+        <div class="dl-row"><span class="dl-num">4</span><span class="dl-decision">Pilot scale</span><span class="dl-chose">10 brands, 8-week pilot</span><span class="dl-rejected">50 brands or full rollout</span><span class="dl-why">Smaller pilot = faster feedback loop + lower cost of being wrong. 10 was enough to surface patterns without overcommitting to a direction we might pivot.</span></div>
+        <div class="dl-row"><span class="dl-num">5</span><span class="dl-decision">Recommendation specificity</span><span class="dl-chose">URL-level specific recommendations</span><span class="dl-rejected">Category-level guidance</span><span class="dl-why">Brand managers forward to content teams who ask "which pages?" Vague guidance creates a translation layer that kills adoption speed.</span></div>
+      </div>
+    </div>
+
+    <!-- METRICS FRAMEWORK -->
+    <div class="artifact-panel" id="artifact-ody-metrics">
+      <div class="artifact-meta">
+        <span class="artifact-type">Metrics Framework</span>
+        <span class="artifact-project">Odyssey · Internal B2B Tool</span>
+      </div>
+      <div class="artifact-layout">
+        <div>
+          <div class="artifact-block">
+            <h4>The Rule I Apply to Every Metric</h4>
+            <p style="font-style:italic;font-size:0.88rem;color:var(--text2);border-left:2px solid var(--accent);padding-left:1rem;">"Can this metric look good while the product is failing? If yes — it's a vanity metric. Find the metric that fails when the product fails. That's your North Star."</p>
+          </div>
+          <div class="artifact-table-label" style="margin-top:1.5rem;">Odyssey Metric Stack</div>
+          <div class="artifact-table">
+            <div class="artifact-table-row header"><span>Layer</span><span>Metric</span></div>
+            <div class="artifact-table-row"><span><strong>North Star</strong></span><span>Recommendation Adoption Rate</span></div>
+            <div class="artifact-table-row"><span>Activation</span><span>% completing first report unaided</span></div>
+            <div class="artifact-table-row"><span>Engagement</span><span>Weekly Active Brand Managers</span></div>
+            <div class="artifact-table-row"><span>Output Quality</span><span>Avg visibility score lift post-recommendation</span></div>
+            <div class="artifact-table-row"><span>Trust Signal</span><span>Support tickets per active user</span></div>
+            <div class="artifact-table-row"><span>Guardrail</span><span>Query success rate across 4 AI engines</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="artifact-block">
+            <h4>Metric I argued against</h4>
+            <p>Total brands onboarded was the metric leadership wanted to track. It grows as we roll out — looks great in a review, doesn't tell you if brand managers actually use the tool or act on its output. I argued for Adoption Rate instead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETRO ODYSSEY -->
+    <div class="artifact-panel" id="artifact-ody-retro">
+      <div class="artifact-meta">
+        <span class="artifact-type">Retrospective</span>
+        <span class="artifact-project">Odyssey · Honest version</span>
+      </div>
+      <div class="artifact-layout">
+        <div>
+          <div class="artifact-block" style="border-left:2px solid var(--accent);padding-left:1.2rem;">
+            <h4>Lock the North Star before writing the PRD</h4>
+            <p>For the first three weeks, the team was building toward "visibility" as a vague goal. I defined the KPI framework later than I should have, which meant some early architectural decisions had to be revisited. North Star first, everything else second.</p>
+          </div>
+          <div class="artifact-block" style="border-left:2px solid var(--accent);padding-left:1.2rem;margin-top:1.2rem;">
+            <h4>Pilot with skeptics, not just engaged teams</h4>
+            <p>The 10 pilot brands were teams I knew were motivated. High adoption early felt good — but masked usability problems that only surfaced at broader rollout. I should have deliberately included one skeptical team. Their friction would have been more valuable than the enthusiasts' praise.</p>
+          </div>
+        </div>
+        <div>
+          <div class="artifact-block" style="border-left:2px solid var(--accent);padding-left:1.2rem;">
+            <h4>Define "recommendation" precisely at the start</h4>
+            <p>First batch of recommendations were too vague: "improve your structured data." Brand managers forwarded to content teams who asked "which pages?" That translation layer cost two weeks. URL-specific recommendations should have been in the spec from day one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /odyssey panel -->
+
+  <!-- PAISA PULSE PANEL -->
+  <div class="project-panel" id="project-paisa">
+    <div class="artifact-tabs">
+      <button class="artifact-tab active" onclick="showArtifact('pp-metrics', this, 'paisa')">Metrics Framework</button>
+      <button class="artifact-tab" onclick="showArtifact('pp-retro', this, 'paisa')">What I'd Do Differently</button>
+    </div>
+
+    <!-- METRICS FRAMEWORK -->
+    <div class="artifact-panel active" id="artifact-pp-metrics">
+      <div class="artifact-meta">
+        <span class="artifact-type">Metrics Framework</span>
+        <span class="artifact-project">Paisa Pulse · Consumer Fintech</span>
+      </div>
+      <div class="artifact-layout">
+        <div>
+          <div class="artifact-table-label">Paisa Pulse Metric Stack</div>
+          <div class="artifact-table">
+            <div class="artifact-table-row header"><span>Layer</span><span>Metric</span></div>
+            <div class="artifact-table-row"><span><strong>North Star</strong></span><span>% users with category spend ↓ month-on-month</span></div>
+            <div class="artifact-table-row"><span>Activation</span><span>% setting a budget in first session</span></div>
+            <div class="artifact-table-row"><span>Engagement</span><span>Sessions in 5 days before salary date</span></div>
+            <div class="artifact-table-row"><span>Feature Health</span><span>Subscription Audit open rate</span></div>
+            <div class="artifact-table-row"><span>Upload Health</span><span>Statement upload success rate (>80%)</span></div>
+            <div class="artifact-table-row"><span>Retention</span><span>Month 2 upload rate</span></div>
+            <div class="artifact-table-row"><span>Guardrail</span><span>Category classification accuracy</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="artifact-block">
+            <h4>The Rule I Apply to Every Metric</h4>
+            <p style="font-style:italic;font-size:0.88rem;color:var(--text2);border-left:2px solid var(--teal);padding-left:1rem;">"Can this metric look good while the product is failing? If yes — it's a vanity metric. Find the metric that fails when the product fails. That's your North Star."</p>
+          </div>
+          <div class="artifact-block" style="margin-top:1rem;">
+            <h4>Metric I argued against</h4>
+            <p>Total spending tracked. It grows as users upload more months — looks good in a deck, doesn't tell you if anyone changed their Swiggy habit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETRO PAISA PULSE -->
+    <div class="artifact-panel" id="artifact-pp-retro">
+      <div class="artifact-meta">
+        <span class="artifact-type">Retrospective</span>
+        <span class="artifact-project">Paisa Pulse · Honest version</span>
+      </div>
+      <div class="artifact-layout">
+        <div>
+          <div class="artifact-block" style="border-left:2px solid var(--teal);padding-left:1.2rem;">
+            <h4>Talk to users before writing code</h4>
+            <p>I built the first version based on my own frustration with Indian finance apps. Legitimate starting point — but not a substitute for interviews. The salary-cycle insight was real. The 3-category focus came later, from looking at actual transaction data. Eight user interviews upfront would have gotten me there in weeks instead of months of building and cutting.</p>
+          </div>
+          <div class="artifact-block" style="border-left:2px solid var(--teal);padding-left:1.2rem;margin-top:1.2rem;">
+            <h4>Design backward from the activation moment</h4>
+            <p>I thought "user uploads statement" was activation. It isn't. The real activation moment is "user sees a nudge that surprises them about their own spending." I should have designed backward from that moment, not forward from the upload step.</p>
+          </div>
+        </div>
+        <div>
+          <div class="artifact-block" style="border-left:2px solid var(--teal);padding-left:1.2rem;">
+            <h4>Remove at the spec stage, not after building</h4>
+            <p>Goals, Badges, Share Card, Help Page — I built all of these before deciding they didn't belong. A sharper MoSCoW prioritisation, informed by a clearer persona, would have kept the initial scope tight. Shipping less faster beats shipping more and then cutting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /paisa panel -->
+
+</section>
+
+<!-- TEARDOWNS -->
+<section id="teardowns">
+  <div class="section-kicker reveal">Thinking in Public</div>
+  <h2 class="section-title reveal">Product teardowns.</h2>
+  <p class="section-sub reveal">How I think about product decisions — using real companies as the case study.</p>
+  <div class="teardown-row">
+    <div class="teardown-card reveal">
+      <div class="teardown-app">
+        <div class="app-icon" style="background:#f5a623;color:#fff;border:none;">C</div>
+        <div><div class="app-name">Chegg</div><div class="app-cat">EdTech · Product Autopsy</div></div>
+      </div>
+      <div class="teardown-headline">AI didn't kill Chegg. Their strategy did.</div>
+      <p>$14.7B → $115M. 99% of market cap gone. The signals were there the whole time — their own data showed users dropping off after getting an answer. Nobody came back to learn more. They built a vending machine when the moat required a tutor.</p>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>Threat detection: 2/10. Distribution risk management: 1/10.</span></div>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>The content was never the moat. The relationship with the student was the moat. They never built it.</span></div>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>Every ChatGPT milestone was a Chegg funeral — and they didn't see it coming.</span></div>
+      <div class="teardown-tag">Product Strategy · AI Disruption · Retention</div>
+      <a href="https://www.linkedin.com/posts/jayadas9_chegg-teardown-ugcPost-7455718646640992256-JQ5j?utm_source=share&utm_medium=member_desktop&rcm=ACoAACzRIqgBIqFF4qplGSwB0oYEypHgxwYg53I" target="_blank" class="teardown-read">Read on LinkedIn →</a>
+    </div>
+
+    <div class="teardown-card reveal">
+      <div class="teardown-app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#4285F4,#EA4335);color:#fff;border:none;">G</div>
+        <div><div class="app-name">Google Pay</div><div class="app-cat">Fintech · Market Share</div></div>
+      </div>
+      <div class="teardown-headline">GPay isn't dying. It's already on life support.</div>
+      <p>Once India's #1 UPI app, GPay is stuck at ~35% market share while PhonePe crossed 50%. In a winner-takes-most market, that trajectory is a slow bleed. GPay built a product so clean they forgot to build a reason to come back.</p>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>No financial summary, no nudges, no goals. PhonePe built wealth management. GPay built a cleaner transaction list.</span></div>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>GPay solved payments. Then stopped. That's a product strategy failure, not an engineering one.</span></div>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>3 UX sins users use daily without noticing — building for transactions instead of relationships.</span></div>
+      <div class="teardown-tag">UX · Retention · Competitive Strategy</div>
+      <a href="https://www.linkedin.com/posts/jayadas9_google-pay-teardown-ugcPost-7453062729923448832-uymz?utm_source=share&utm_medium=member_desktop&rcm=ACoAACzRIqgBIqFF4qplGSwB0oYEypHgxwYg53I" target="_blank" class="teardown-read">Read on LinkedIn →</a>
+    </div>
+
+    <div class="teardown-card reveal">
+      <div class="teardown-app">
+        <div class="app-icon" style="background:#1a1a2e;color:#fff;border:none;">Z</div>
+        <div><div class="app-name">Zepto Cafe</div><div class="app-cat">Quick Commerce · Retention</div></div>
+      </div>
+      <div class="teardown-headline">Zepto Cafe isn't a food product. It's a retention engine.</div>
+      <p>100K orders per day in under a year. They run the kitchen inside their dark stores — no third-party chaos, no excuses. But the 10-minute promise breaks at peak, support is basically a wall, and the menu is wide, not personal.</p>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>Every good cafe order trains the user to trust the brand. That's the flywheel — and most people missed it.</span></div>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>Users don't mind delays. They mind surprises. Showing prep time separately from delivery time would cut complaints 40%.</span></div>
+      <div class="teardown-finding"><span class="teardown-finding-num">→</span><span>Same homepage for everyone is a missed retention opportunity — time-of-day reorder nudges would increase frequency.</span></div>
+      <div class="teardown-tag">Quick Commerce · Growth · UX</div>
+      <a href="https://www.linkedin.com/posts/jayadas9_zepto-cafe-teardown-ugcPost-7450526328543481856-XorN?utm_source=share&utm_medium=member_desktop&rcm=ACoAACzRIqgBIqFF4qplGSwB0oYEypHgxwYg53I" target="_blank" class="teardown-read">Read on LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-layout">
+    <div class="contact-left">
+      <h2 class="reveal">Let's build something <em>worth measuring.</em></h2>
+      <p class="reveal">I'm actively looking for PM roles — consumer, fintech, or health tech. If you're building something where data and product instinct need to work together, I'd love to talk.</p>
+      <div class="contact-links reveal">
+        <a href="mailto:dasjaya764@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span class="link-label">dasjaya764@gmail.com</span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a href="https://linkedin.com/in/jayadas9" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <span class="link-label">linkedin.com/in/jayadas9</span>
+          <span class="link-arrow">↗</span>
+        </a>
+      </div>
+      <div class="availability reveal">
+        <div class="avail-dot">Available for opportunities</div>
+        <p>Open to full-time PM roles. Immediate joiner. Based in India, open to remote or hybrid.</p>
+      </div>
+    </div>
+    <div class="contact-form-card reveal">
+      <h4>Send a message</h4>
+      <p>Have a role, a project, or just want to talk product? I read everything.</p>
+      <div class="form-fields">
+        <div class="form-field"><label>Your name</label><input type="text" placeholder="Name"></div>
+        <div class="form-field"><label>Email</label><input type="email" placeholder="email@company.com"></div>
+        <div class="form-field"><label>Message</label><textarea rows="4" placeholder="What are you building?"></textarea></div>
+        <button class="form-submit">Send message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Jaya Das · Built with intention</p>
+  <p style="font-size:0.7rem;color:var(--text3);">Product Manager · Bangalore · Gurugram · Open to work</p>
+</footer>
+
+<script>
+// Project-level tabs (Odyssey / Paisa Pulse)
+function showProject(id, btn) {
+  document.querySelectorAll('.project-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.project-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('project-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Sub-tabs within each project
+function showArtifact(id, btn, projectId) {
+  const panel = document.getElementById('project-' + projectId);
+  panel.querySelectorAll('.artifact-panel').forEach(p => p.classList.remove('active'));
+  panel.querySelectorAll('.artifact-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('artifact-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 55);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+
+// Animate metric bars
+const bars = document.querySelectorAll('.metric-fill, .mkp-bar-fill');
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const w = entry.target.getAttribute('data-w');
+      if (w) entry.target.style.width = w;
+    }
+  });
+}, { threshold: 0.3 });
+bars.forEach(bar => {
+  const w = bar.style.width;
+  bar.setAttribute('data-w', w);
+  bar.style.width = '0';
+  barObserver.observe(bar);
+  setTimeout(() => { bar.style.width = w; }, 300);
+});
+</script>
+</body>
+</html>
