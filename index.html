@@ -142,23 +142,11 @@ section:nth-of-type(even){background:#fff;}
 .kpi-num{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--accent);display:block;line-height:1;margin-bottom:0.28rem;}
 .kpi-label{font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;line-height:1.4;font-weight:800;}
 
-.paysa-mockup{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);}
-.mockup-topbar{background:var(--bg3);color:var(--text2);padding:0.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;font-size:0.7rem;}
-.mockup-dots{display:flex;gap:5px;}
-.mockup-dot{width:8px;height:8px;border-radius:50%;background:rgba(30,37,43,0.18);}
-.mockup-body{padding:1.2rem;}
-.mkp-greeting{font-size:0.65rem;color:var(--text3);margin-bottom:0.18rem;}
-.mkp-cycle{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;font-weight:700;background:var(--accent3);color:var(--accent);padding:0.2rem 0.55rem;border-radius:4px;margin-top:0.35rem;margin-bottom:0.9rem;}
-.mkp-cat-card{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.8rem;margin-bottom:0.55rem;}
-.mkp-cat-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem;}
-.mkp-cat-name{font-size:0.75rem;font-weight:800;color:var(--text);}
-.mkp-cat-amount{font-family:'DM Serif Display',serif;font-size:0.92rem;font-weight:400;}
-.mkp-cat-amount.r{color:var(--rose);}
-.mkp-cat-amount.g{color:var(--accent);}
-.mkp-bar-track{width:100%;height:3px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:0.3rem;}
-.mkp-bar-fill{height:100%;border-radius:3px;}
-.mkp-cat-nudge{font-size:0.62rem;color:var(--text3);font-style:italic;}
-.mkp-nudge{background:var(--teal2);border:1px solid rgba(122,91,47,0.18);border-radius:6px;padding:0.7rem;font-size:0.7rem;color:var(--teal);line-height:1.6;margin-top:0.9rem;}
+.paysa-mockup{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;}
+.paysa-screenshot{width:100%;display:block;}
+.paysa-screenshot img{width:100%;display:block;object-fit:cover;min-height:380px;max-height:520px;}
+.paysa-screenshot-caption{padding:1.2rem 1.35rem 1.4rem;color:var(--text2);font-size:0.92rem;background:var(--bg3);border-top:1px solid var(--border);text-align:center;}
+.paysa-screenshot-caption strong{color:var(--text);}
 
 .project-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:2.5rem;width:fit-content;background:#fff;}
 .project-tab{background:transparent;border:none;padding:0.7rem 1.8rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:800;color:var(--text3);cursor:pointer;letter-spacing:0.03em;transition:all 0.18s;border-right:1px solid var(--border);}
@@ -567,30 +555,11 @@ footer p{font-size:0.72rem;color:var(--text3);}
     </div>
     <div class="reveal">
       <div class="paysa-mockup">
-        <div class="mockup-topbar">
-          <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-          <span>Paysa Pulse</span>
-          <span style="opacity:0.4">💓</span>
+        <div class="paysa-screenshot">
+          <img src="paysa%20pulse%20screenshot.jpg" alt="Paysa Pulse product screenshot">
         </div>
-        <div class="mockup-body">
-          <div class="mkp-greeting">Good evening, Jaya</div>
-          <div class="mkp-cycle">📅 Careful phase · 8 days to salary</div>
-          <div class="mkp-cat-card">
-            <div class="mkp-cat-header"><span class="mkp-cat-name">🍔 Food Delivery</span><span class="mkp-cat-amount r">₹3,240</span></div>
-            <div class="mkp-bar-track"><div class="mkp-bar-fill" style="width:81%;background:var(--rose);"></div></div>
-            <div class="mkp-cat-nudge">₹3,240 of ₹4,000 budget · 4 more orders than last month</div>
-          </div>
-          <div class="mkp-cat-card">
-            <div class="mkp-cat-header"><span class="mkp-cat-name">🛒 Quick Commerce</span><span class="mkp-cat-amount r">₹1,890</span></div>
-            <div class="mkp-bar-track"><div class="mkp-bar-fill" style="width:63%;background:var(--accent);"></div></div>
-            <div class="mkp-cat-nudge">₹1,890 of ₹3,000 budget · ↓ vs last month</div>
-          </div>
-          <div class="mkp-cat-card">
-            <div class="mkp-cat-header"><span class="mkp-cat-name">📱 Subscriptions</span><span class="mkp-cat-amount g">₹1,147</span></div>
-            <div class="mkp-bar-track"><div class="mkp-bar-fill" style="width:38%;background:var(--teal);"></div></div>
-            <div class="mkp-cat-nudge">3 active subscriptions detected · Audit →</div>
-          </div>
-          <div class="mkp-nudge">💡 You're 8 days from salary. Your food delivery spend is already 81% of budget — consider cooking the last few days.</div>
+        <div class="paysa-screenshot-caption">
+          <strong>Paysa Pulse:</strong> a cleaner, category-first habit coach for spenders who want one clear path to better financial behaviour.
         </div>
       </div>
       <div class="decision-block" style="margin-top:1.1rem;">
@@ -598,7 +567,6 @@ footer p{font-size:0.72rem;color:var(--text3);}
         <div style="font-size:0.76rem;color:var(--text2);line-height:1.85;">
           <div style="display:flex;gap:0.5rem;margin-bottom:0.35rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Goals page</strong> — savings number unreliable with 3-category view</span></div>
           <div style="display:flex;gap:0.5rem;margin-bottom:0.35rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Badges</strong> — gamification without depth signals shallow thinking</span></div>
-          <div style="display:flex;gap:0.5rem;margin-bottom:0.35rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Share Card</strong> — no user data to justify</span></div>
           <div style="display:flex;gap:0.5rem;"><span style="color:var(--rose);font-weight:600;">✕</span><span><strong>Help Page</strong> — if you need a help page, fix the UX</span></div>
         </div>
       </div>
